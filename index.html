@@ -39,7 +39,6 @@
       color: inherit;
     }
 
-    /* Top Bar */
     .topbar {
       background: var(--primary);
       color: #e2e8f0;
@@ -53,7 +52,6 @@
       font-weight: 600;
     }
 
-    /* Header / Navbar */
     header {
       background: var(--card);
       border-bottom: 1px solid var(--border);
@@ -80,17 +78,12 @@
       gap: 12px;
     }
 
-    .brand-logo {
-      width: 44px;
-      height: 44px;
+    .brand-logo-img {
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), #0ea5e9);
-      color: #fff;
-      font-weight: 800;
-      font-size: 1.25rem;
-      display: grid;
-      place-items: center;
-      letter-spacing: -0.5px;
+      object-fit: cover;
+      border: 1px solid var(--border);
     }
 
     .brand-text h1 {
@@ -163,7 +156,6 @@
       font-weight: 700;
     }
 
-    /* Hero Section */
     .hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
       color: #fff;
@@ -233,14 +225,12 @@
       color: #e2e8f0;
     }
 
-    /* Main Container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 32px 20px;
     }
 
-    /* Controls: Search & Filter */
     .controls {
       display: flex;
       flex-wrap: wrap;
@@ -295,7 +285,6 @@
       border-color: var(--accent);
     }
 
-    /* Product Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
@@ -413,7 +402,6 @@
       font-size: 0.82rem;
     }
 
-    /* Services & Location Sections */
     .services-section {
       margin-top: 44px;
       background: #fff;
@@ -485,15 +473,23 @@
       color: var(--primary);
     }
 
-    .map-card {
+    .shop-card {
       background: linear-gradient(135deg, #eff6ff, #e0f2fe);
       border: 1px solid #bfdbfe;
       border-radius: 12px;
-      padding: 24px;
+      padding: 18px;
       text-align: center;
     }
 
-    /* Store Info & Footer */
+    .shop-photo {
+      width: 100%;
+      max-height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
     .store-footer {
       background: var(--primary);
       color: #cbd5e1;
@@ -530,7 +526,6 @@
       color: #94a3b8;
     }
 
-    /* Cart Drawer Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -627,10 +622,16 @@
     📍 Main Road, Near High School, Sordiha, Bishrampur (822132) &nbsp;|&nbsp; <span>JioHome Service Partner</span> &nbsp;|&nbsp; 📞 +91 82106 60496
   </div>
 
-  <!-- Header -->
+  <!-- Header with Logo -->
   <header>
     <div class="nav-container">
-      <img src="logo.png" alt="Bharat Mobile Logo" style="width:48px; height:48px; border-radius:12px; object-fit:cover;" />
+      <div class="brand">
+        <img src="logo.png" alt="Bharat Mobile Logo" class="brand-logo-img" />
+        <div class="brand-text">
+          <h1>Bharat Mobile</h1>
+          <p>Mobiles • TWS & Audio • Chargers • TV & Appliances • JioHome • Repairs</p>
+        </div>
+      </div>
 
       <div class="nav-actions">
         <button class="btn btn-outline" onclick="toggleCart()">
@@ -674,4 +675,515 @@
           <li>✅ Smartphones: Ai+ Nova 2 Power 5G, Realme Narzo N61 & More</li>
           <li>✅ Audio: OnePlus Z2 ANC, boAt Rockerz 235 Pro, UltraPods Max</li>
           <li>✅ TV & Home: Motorola 32" QLED Google TV & Kenstar Induction</li>
-          <li>✅ Chargers & Glass: Apple 20W,
+          <li>✅ Chargers & Glass: Apple 20W, ERD Chargers & Tempered Glass</li>
+          <li>✅ Official JioHome Fiber & AirFiber Installation</li>
+          <li>✅ Fast Mobile Repairing & Instant Bike Insurance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog Section -->
+  <main class="container" id="catalog">
+    <div class="controls">
+      <div class="tabs" id="categoryTabs">
+        <button class="tab-btn active" data-cat="All">All Items (20)</button>
+        <button class="tab-btn" data-cat="Smartphones">Smartphones</button>
+        <button class="tab-btn" data-cat="Audio">TWS & Audio</button>
+        <button class="tab-btn" data-cat="Chargers & Accessories">Chargers & Accessories</button>
+        <button class="tab-btn" data-cat="TV & Appliances">TV & Appliances</button>
+        <button class="tab-btn" data-cat="Wearables & Gifts">Smartwatch & Gifts</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search Nova 2, OnePlus, Motorola TV, Charger..." />
+      </div>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
+
+    <!-- Store Services Strip -->
+    <section class="services-section">
+      <h3 class="section-heading">In-Store Services & Digital Solutions</h3>
+      <p class="section-sub">Visit Main Road, near High School, Sordiha, Bishrampur or book directly via WhatsApp.</p>
+
+      <div class="service-grid">
+        <div class="service-box">
+          <h4>📡 JioHome Connection</h4>
+          <p>New JioFiber & JioAirFiber installation, high-speed Wi-Fi setup, and plan support.</p>
+          <a class="btn btn-wa" style="width:100%" href="https://wa.me/918210660496?text=Hello%20Bharat%20Mobile%2C%20I%20want%20to%20book%20a%20new%20JioHome%20connection." target="_blank" rel="noopener">Book JioHome</a>
+        </div>
+
+        <div class="service-box">
+          <h4>🛠️ Mobile Repairing</h4>
+          <p>Display replacement, battery change, charging jack fix, and software servicing.</p>
+          <a class="btn btn-wa" style="width:100%" href="https://wa.me/918210660496?text=Hello%20Bharat%20Mobile%2C%20I%20need%20a%20mobile%20repair%20quote." target="_blank" rel="noopener">Get Repair Quote</a>
+        </div>
+
+        <div class="service-box">
+          <h4>🏍️ Bike Insurance</h4>
+          <p>Instant third-party & comprehensive two-wheeler insurance policy in 5 minutes.</p>
+          <a class="btn btn-wa" style="width:100%" href="https://wa.me/918210660496?text=Hello%20Bharat%20Mobile%2C%20I%20want%20to%20renew%20my%20bike%20insurance." target="_blank" rel="noopener">Renew Insurance</a>
+        </div>
+
+        <div class="service-box">
+          <h4>▶️ Sonu Solutions Tech</h4>
+          <p>Watch live unboxing, camera reviews, and tech guides on our official channel.</p>
+          <a class="btn btn-outline" style="width:100%" href="https://www.youtube.com/@SonuSolutions" target="_blank" rel="noopener">Watch Videos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit Store, Shop Photo & Opening Hours -->
+    <section class="services-section" id="visit">
+      <div class="location-grid">
+        <div>
+          <h3 class="section-heading">Visit Bharat Mobile</h3>
+          <p class="section-sub" style="margin-bottom:12px;">
+            📍 Main Road, near High School, Sordiha, Bishrampur, Jharkhand 822132
+          </p>
+          <table class="hours-table">
+            <tr>
+              <td>Monday – Thursday</td>
+              <td>9:00 AM – 9:00 PM</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>9:00 AM – 12:30 PM &amp; 2:00 PM – 9:00 PM</td>
+            </tr>
+            <tr>
+              <td>Saturday – Sunday</td>
+              <td>9:00 AM – 9:00 PM</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="shop-card">
+          <img src="shop.jpg" alt="Bharat Mobile Storefront Bishrampur" class="shop-photo" />
+          <h4 style="font-size:1.15rem; color:var(--primary); margin-bottom:6px;">Bharat Mobile — Main Road Bishrampur</h4>
+          <p style="font-size:0.88rem; color:var(--muted); margin-bottom:16px;">
+            Near High School, Sordiha, Jharkhand 822132
+          </p>
+          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://maps.app.goo.gl/UiF8F1i8Ha5JqYUX9?g_st=aw" target="_blank" rel="noopener">
+              📍 Get Directions
+            </a>
+            <a class="btn btn-outline" href="tel:+918210660496">
+              📞 +91 82106 60496
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="store-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Bharat Mobile</h3>
+        <p>Your local destination in Bishrampur for smartphones, QLED TVs, induction cooktops, mobile accessories, expert repairs, bike insurance, and JioHome services.</p>
+      </div>
+
+      <div>
+        <h3>Store Address</h3>
+        <p>Main Road, near High School, Sordiha</p>
+        <p>Bishrampur, Palamu, Jharkhand 822132</p>
+        <p><a href="https://maps.app.goo.gl/UiF8F1i8Ha5JqYUX9?g_st=aw" target="_blank" rel="noopener" style="color:#38bdf8;">View on Google Maps →</a></p>
+      </div>
+
+      <div>
+        <h3>Direct Contact</h3>
+        <p>📞 Phone / WhatsApp: +91 82106 60496</p>
+        <p>🛍️ WhatsApp Catalog: <a href="https://wa.me/c/918210660496" target="_blank" rel="noopener" style="color:#38bdf8;">wa.me/c/918210660496</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Bharat Mobile, Main Road Bishrampur (822132). All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Cart / Inquiry Drawer -->
+  <div class="modal-backdrop" id="cartModal">
+    <div class="drawer">
+      <div>
+        <div class="drawer-header">
+          <h3>Your Order / Price Inquiry List</h3>
+          <button class="btn btn-outline" onclick="toggleCart()" style="padding:6px 12px;">✕</button>
+        </div>
+        <div class="drawer-items" id="cartItemsContainer"></div>
+      </div>
+
+      <div>
+        <div style="display:flex; justify-content:space-between; font-weight:800; margin-bottom:6px; padding-top:10px; border-top:1px solid var(--border);">
+          <span>Listed Items Total:</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+        <p id="cartNote" style="font-size:0.78rem; color:#64748b; margin-bottom:12px;"></p>
+        <button class="btn btn-wa" style="width:100%;" onclick="checkoutWhatsApp()">
+          📲 Send Order on WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORE_PHONE = "918210660496";
+
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: "Ai+ Nova 2 Power 5G",
+        category: "Smartphones",
+        price: 17999,
+        mrp: 19999,
+        icon: "📱",
+        desc: "Nova 2 Power Powered With 7000mAh Massive Battery, Dimensity 7100 Processor, 48MP Sony Camera."
+      },
+      {
+        id: 2,
+        name: "Realme Narzo N61",
+        category: "Smartphones",
+        price: null,
+        mrp: null,
+        icon: "📱",
+        desc: "ArmorShell protection, smooth 90Hz display, long-lasting battery & reliable everyday performance."
+      },
+      {
+        id: 3,
+        name: "Refurbished Guru Music 2",
+        category: "Smartphones",
+        price: 1600,
+        mrp: null,
+        icon: "📞",
+        desc: "Classic dual-SIM keypad feature phone with dedicated music controls, FM radio & loud speaker."
+      },
+      {
+        id: 4,
+        name: "TV Motorola QLED Google 32\"",
+        category: "TV & Appliances",
+        price: null,
+        mrp: null,
+        icon: "📺",
+        desc: "32-inch HD-QLED Smart Google TV with vibrant colors, Dolby Audio, built-in Chromecast & voice remote."
+      },
+      {
+        id: 5,
+        name: "Induction Kenstar Infra Neo 2200W",
+        category: "TV & Appliances",
+        price: 3999,
+        mrp: 4499,
+        icon: "🍳",
+        desc: "Kenstar Infra 2200W Induction — Works with all types of cookware & comes with temperature knob controller."
+      },
+      {
+        id: 6,
+        name: "Neckband OnePlus Z2 ANC OG",
+        category: "Audio",
+        price: null,
+        mrp: null,
+        icon: "🎵",
+        desc: "Active Noise Cancellation wireless neckband with deep bass drivers, magnetic control & fast charging."
+      },
+      {
+        id: 7,
+        name: "Neckband Boat Rockerz 235 Pro",
+        category: "Audio",
+        price: 1000,
+        mrp: null,
+        icon: "🎵",
+        desc: "boAt Signature Sound, ENx clear calling technology, BEAST low-latency mode & rapid ASAP charge."
+      },
+      {
+        id: 8,
+        name: "TWS UltraPods Max",
+        category: "Audio",
+        price: null,
+        mrp: null,
+        icon: "🎧",
+        desc: "Transparent case design with LED battery display, Bluetooth 5.3 & crisp stereo sound."
+      },
+      {
+        id: 9,
+        name: "TWS M10 Newest",
+        category: "Audio",
+        price: null,
+        mrp: null,
+        icon: "🎧",
+        desc: "V5.3 True Wireless Headset with digital LED power display charging case & touch controls."
+      },
+      {
+        id: 10,
+        name: "TWS i12",
+        category: "Audio",
+        price: null,
+        mrp: null,
+        icon: "🎧",
+        desc: "Compact white wireless earbuds with magnetic charging case & easy auto-pairing."
+      },
+      {
+        id: 11,
+        name: "Earphone AKG Samsung",
+        category: "Audio",
+        price: null,
+        mrp: null,
+        icon: "🎧",
+        desc: "Braided tangle-free wired earphones tuned by AKG with rich balanced sound & inline mic."
+      },
+      {
+        id: 12,
+        name: "Earphone SPN CT33",
+        category: "Audio",
+        price: 200,
+        mrp: null,
+        icon: "🎧",
+        desc: "Durable wired earphone with clear call microphone & comfortable in-ear fit."
+      },
+      {
+        id: 13,
+        name: "Earphone ERD HF-101",
+        category: "Audio",
+        price: null,
+        mrp: null,
+        icon: "🎧",
+        desc: "Original ERD wired hands-free earphone with strong cable & clear voice clarity."
+      },
+      {
+        id: 14,
+        name: "Charger Apple 20W",
+        category: "Chargers & Accessories",
+        price: null,
+        mrp: null,
+        icon: "🔌",
+        desc: "20W USB-C Power Adapter for fast, safe charging of iPhones and Type-C devices."
+      },
+      {
+        id: 15,
+        name: "Charger iSONiX Jio",
+        category: "Chargers & Accessories",
+        price: 120,
+        mrp: null,
+        icon: "🔌",
+        desc: "1.2A wall charger compatible with JioPhone and micro-USB mobile devices."
+      },
+      {
+        id: 16,
+        name: "Charger ERD 2Amp",
+        category: "Chargers & Accessories",
+        price: null,
+        mrp: null,
+        icon: "🔌",
+        desc: "Reliable 2Amp fast wall charger with surge & short-circuit protection."
+      },
+      {
+        id: 17,
+        name: "Car Charger ERD 15W",
+        category: "Chargers & Accessories",
+        price: null,
+        mrp: null,
+        icon: "🚗",
+        desc: "15W fast car mobile charger for safe on-the-go charging in cars and commercial vehicles."
+      },
+      {
+        id: 18,
+        name: "Tempered Glass Normal",
+        category: "Chargers & Accessories",
+        price: null,
+        mrp: null,
+        icon: "🛡️",
+        desc: "9H scratch-resistant screen protector with free clean installation at Bharat Mobile."
+      },
+      {
+        id: 19,
+        name: "Smartwatch BeatXP Sigma",
+        category: "Wearables & Gifts",
+        price: null,
+        mrp: null,
+        icon: "⌚",
+        desc: "Bluetooth calling smartwatch with HD display, health tracking & multiple sports modes."
+      },
+      {
+        id: 20,
+        name: "Gift SparX Shoes",
+        category: "Wearables & Gifts",
+        price: null,
+        mrp: null,
+        icon: "👟",
+        desc: "Stylish & comfortable SparX footwear available in store—check sizes and designs on WhatsApp."
+      }
+    ];
+
+    let activeCategory = "All";
+    let searchQuery = "";
+    let cart = [];
+
+    const grid = document.getElementById("productGrid");
+    const searchInput = document.getElementById("searchInput");
+    const categoryTabs = document.getElementById("categoryTabs");
+
+    function renderProducts() {
+      const filtered = PRODUCTS.filter(p => {
+        const matchesCat = activeCategory === "All" || p.category === activeCategory;
+        const matchesQuery =
+          p.name.toLowerCase().includes(searchQuery) ||
+          p.desc.toLowerCase().includes(searchQuery) ||
+          p.category.toLowerCase().includes(searchQuery);
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#64748b; padding:30px;">No matching items found. Contact us on WhatsApp (+91 82106 60496) for stock availability.</p>`;
+        return;
+      }
+
+      grid.innerHTML = filtered
+        .map(product => {
+          const singleWaText = encodeURIComponent(
+            product.price
+              ? `Hello Bharat Mobile, I want to order *${product.name}* (₹${product.price.toLocaleString("en-IN")}). Is it available?`
+              : `Hello Bharat Mobile, please share the best store price and availability for *${product.name}*.`
+          );
+
+          const priceHtml = product.price
+            ? `<div class="card-price">
+                 ₹${product.price.toLocaleString("en-IN")}
+                 ${product.mrp ? `<span class="mrp">₹${product.mrp.toLocaleString("en-IN")}</span>` : ""}
+               </div>`
+            : `<div class="card-price enquire-price">Ask Best Store Price</div>`;
+
+          const discountBadge =
+            product.price && product.mrp
+              ? `<span class="sale-badge">SAVE ₹${(product.mrp - product.price).toLocaleString("en-IN")}</span>`
+              : "";
+
+          return `
+            <div class="card">
+              <div class="card-img">
+                <span class="card-tag">${product.category}</span>
+                ${discountBadge}
+                <div class="icon">${product.icon}</div>
+                <small style="color:#64748b; font-weight:600;">Bharat Mobile Catalog</small>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">${product.name}</h3>
+                <p class="card-desc">${product.desc}</p>
+                ${priceHtml}
+                <div class="card-actions">
+                  <button class="btn btn-outline" onclick="addToCart(${product.id})">+ Add to List</button>
+                  <a class="btn btn-wa" href="https://wa.me/${STORE_PHONE}?text=${singleWaText}" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    categoryTabs.addEventListener("click", e => {
+      if (!e.target.classList.contains("tab-btn")) return;
+      document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+      e.target.classList.add("active");
+      activeCategory = e.target.dataset.cat;
+      renderProducts();
+    });
+
+    searchInput.addEventListener("input", e => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      renderProducts();
+    });
+
+    function addToCart(id) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        const product = PRODUCTS.find(p => p.id === id);
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCartUI();
+    }
+
+    function changeQty(id, delta) {
+      const index = cart.findIndex(item => item.id === id);
+      if (index === -1) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById("cartCount");
+      const container = document.getElementById("cartItemsContainer");
+      const totalEl = document.getElementById("cartTotal");
+      const noteEl = document.getElementById("cartNote");
+
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalAmount = cart.reduce((sum, item) => sum + (item.price ? item.price * item.qty : 0), 0);
+      const hasUnpriced = cart.some(item => !item.price);
+
+      countEl.textContent = totalQty;
+      totalEl.textContent = "₹" + totalAmount.toLocaleString("en-IN");
+      noteEl.textContent = hasUnpriced
+        ? "* Some items in your list are marked 'Ask Best Store Price' and will be quoted on WhatsApp."
+        : "";
+
+      if (cart.length === 0) {
+        container.innerHTML = `<p style="color:#64748b; text-align:center; margin-top:40px;">Your order list is empty. Add items from the catalog to send on WhatsApp.</p>`;
+        return;
+      }
+
+      container.innerHTML = cart
+        .map(
+          item => `
+          <div class="cart-item">
+            <div>
+              <h5>${item.name}</h5>
+              <span>${item.price ? "₹" + (item.price * item.qty).toLocaleString("en-IN") : "Ask Best Price"}</span>
+            </div>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
+              <strong>${item.qty}</strong>
+              <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+            </div>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    function toggleCart() {
+      document.getElementById("cartModal").classList.toggle("open");
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        alert("Please add at least one product to your list first.");
+        return;
+      }
+      let message = "Hello *Bharat Mobile*, I would like to order / check price for:\n\n";
+      let total = 0;
+      cart.forEach((item, idx) => {
+        if (item.price) {
+          const sub = item.price * item.qty;
+          total += sub;
+          message += `${idx + 1}. *${item.name}* x ${item.qty} = ₹${sub.toLocaleString("en-IN")}\n`;
+        } else {
+          message += `${idx + 1}. *${item.name}* x ${item.qty} (Ask Best Price)\n`;
+        }
+      });
+      if (total > 0) {
+        message += `\n*Listed Items Total:* ₹${total.toLocaleString("en-IN")}`;
+      }
+      message += `\nPlease confirm availability and final store price.`;
+
+      const url = `https://wa.me/${STORE_PHONE}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    renderProducts();
+    updateCartUI();
+  </script>
+</body>
+</html>
