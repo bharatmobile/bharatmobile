@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharat Mobile | Smartphones, TWS, TV, Chargers & JioHome - Bishrampur (822132)</title>
+  <meta name="description" content="Bharat Mobile at Main Road, near High School, Sordiha, Bishrampur, Jharkhand 822132. Shop Ai+ Nova 2 Power 5G, Realme Narzo N61, Motorola 32 QLED TV, OnePlus & boAt Neckbands, TWS earbuds, Apple & ERD chargers, tempered glass, repairs, bike insurance & JioHome." />
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --whatsapp: #16a34a;
+      --whatsapp-dark: #15803d;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --sale: #dc2626;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Top Bar */
+    .topbar {
+      background: var(--primary);
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      padding: 8px 16px;
+      text-align: center;
+    }
+
+    .topbar span {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    /* Header / Navbar */
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #0ea5e9);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.25rem;
+      display: grid;
+      place-items: center;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.15;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s ease;
+    }
+
+    .btn-wa {
+      background: var(--whatsapp);
+      color: #fff;
+    }
+
+    .btn-wa:hover {
+      background: var(--whatsapp-dark);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+    }
+
+    .cart-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge-partner {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #7dd3fc;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 {
+      font-size: 2.1rem;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 0.98rem;
+      margin-bottom: 22px;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius);
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #38bdf8;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* Controls: Search & Filter */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+      max-width: 340px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+      outline: none;
+      background: #fff;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent);
+    }
+
+    /* Product Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.07);
+    }
+
+    .card-img {
+      height: 165px;
+      background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      position: relative;
+    }
+
+    .card-img .icon {
+      font-size: 2.7rem;
+      margin-bottom: 6px;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    .sale-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--sale);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .card-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .card-price .mrp {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .card-price.enquire-price {
+      color: #0f766e;
+      font-size: 0.98rem;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .card-actions .btn {
+      padding: 9px 10px;
+      font-size: 0.82rem;
+    }
+
+    /* Services & Location Sections */
+    .services-section {
+      margin-top: 44px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 22px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .service-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      background: var(--bg);
+    }
+
+    .service-box h4 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .service-box p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .hours-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .map-card {
+      background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    /* Store Info & Footer */
+    .store-footer {
+      background: var(--primary);
+      color: #cbd5e1;
+      margin-top: 48px;
+      padding: 40px 20px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-inner h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-inner p {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 18px auto 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+
+    /* Cart Drawer Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      display: none;
+      justify-content: flex-end;
+      z-index: 200;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .drawer {
+      background: #fff;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+    }
+
+    .drawer-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      gap: 10px;
+    }
+
+    .cart-item h5 {
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .cart-item span {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media (max-width: 820px) {
+      .hero-inner,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h2 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="topbar">
+    📍 Main Road, Near High School, Sordiha, Bishrampur (822132) &nbsp;|&nbsp; <span>JioHome Service Partner</span> &nbsp;|&nbsp; 📞 +91 82106 60496
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">BM</div>
+        <div class="brand-text">
+          <h1>Bharat Mobile</h1>
+          <p>Mobiles • TWS & Audio • Chargers • TV & Appliances • JioHome • Repairs</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="toggleCart()">
+          🛒 Order List <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/UiF8F1i8Ha5JqYUX9?g_st=aw" target="_blank" rel="noopener">
+          📍 Directions
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/c/918210660496" target="_blank" rel="noopener">
+          📲 WhatsApp Catalog
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="badge-partner">Authorized JioHome Service Partner • Bishrampur (822132)</div>
+        <h2>Your Trusted Mobile & Electronics Store in Bishrampur</h2>
+        <p>
+          Visit us on Main Road, near High School, Sordiha (Bishrampur). Shop 5G smartphones, QLED Google TVs, induction cooktops, OnePlus & boAt neckbands, TWS earbuds, Apple & ERD chargers, tempered glass, mobile repairs, bike insurance, and JioHome connections.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-wa" href="https://wa.me/918210660496?text=Hello%20Bharat%20Mobile%2C%20I%20want%20to%20enquire%20about%20a%20product." target="_blank" rel="noopener">
+            💬 Order on WhatsApp
+          </a>
+          <a class="btn btn-primary" href="https://maps.app.goo.gl/UiF8F1i8Ha5JqYUX9?g_st=aw" target="_blank" rel="noopener">
+            📍 Open in Google Maps
+          </a>
+          <a class="btn btn-outline" href="tel:+918210660496">
+            📞 Call +91 82106 60496
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Available at Bharat Mobile</h3>
+        <ul>
+          <li>✅ Smartphones: Ai+ Nova 2 Power 5G, Realme Narzo N61 & More</li>
+          <li>✅ Audio: OnePlus Z2 ANC, boAt Rockerz 235 Pro, UltraPods Max</li>
+          <li>✅ TV & Home: Motorola 32" QLED Google TV & Kenstar Induction</li>
+          <li>✅ Chargers & Glass: Apple 20W,
