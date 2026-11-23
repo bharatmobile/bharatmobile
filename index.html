@@ -1063,11 +1063,10 @@
 
           return `
             <div class="card">
-              <div class="card-img">
+             <div class="card-img" style="${product.image ? 'background:#fff; border-bottom:1px solid var(--border);' : ''}">
                 <span class="card-tag">${product.category}</span>
                 ${discountBadge}
-                <div class="icon">${product.icon}</div>
-                <small style="color:#64748b; font-weight:600;">Bharat Mobile Catalogue</small>
+                ${product.image ? `<img src="${product.image}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain; padding:10px;" />` : `<div class="icon">${product.icon}</div><small style="color:#64748b; font-weight:600;">Bharat Mobile Catalogue</small>`}
               </div>
               <div class="card-body">
                 <h3 class="card-title">${product.name}</h3>
